@@ -12,53 +12,87 @@
             <h1>GROUP MAKER</h1>
             <hr>
         </header>
-        <form>
-            <div class="container" id="filepath-container">
-                <h2>Choose Class List</h2>
-                <hr>
-                <div id="file-selection">
-                    <input id="file-input" type="file" required/>
-                    <input id="file-select-btn" type="button" value="Select File" onclick="document.getElementById('file-input').click()">
-                </div>
-            </div>
-            <div class="container" id="criteria">
-                <div class="criteria-content">
-                    <h2>Criteria</h2>
-                    <h2>Quantity</h2>
-                </div>
+        <main>
+            <form>
+                <div class="container" id="filepath-container">
+                    <h2>Choose Class List</h2>
                     <hr>
-                <div class="criteria-content">
-                    <div>
-                        <input id="group-number" type="radio" onclick="document.getElementById('group-size-input').disabled=true; document.getElementById('group-number-input').disabled=false" name="criteria-value" checked>
-                        <label for="group-number">Number of Groups</label>
+                    <div id="file-selection">
+                        <input id="file-input" type="file" required/>
+                        <input id="file-select-btn" type="button" value="Select File" onclick="document.getElementById('file-input').click()" />
                     </div>
-                    <input type="number" id="group-number-input" min="0" step="1" />
                 </div>
-                <div class="criteria-content">
-                    <div>
-                        <input id="group-size" type="radio" onclick="document.getElementById('group-number-input').disabled=true; document.getElementById('group-size-input').disabled=false" name="criteria-value">
-                        <label for="group-size">Group Size</label>
+                <div class="container" id="criteria">
+                    <div class="criteria-content">
+                        <h2>Criteria</h2>
+                        <h2>Quantity</h2>
                     </div>
-                    <input type="number" id="group-size-input" min="0" step="1" disabled />
+                        <hr>
+                    <div class="criteria-content">
+                        <div>
+                            <input id="group-number" type="radio" onclick="document.getElementById('group-size-input').disabled=true; document.getElementById('group-number-input').disabled=false" name="criteria-value" checked />
+                            <label for="group-number">Number of Groups</label>
+                        </div>
+                        <input type="number" id="group-number-input" min="0" step="1" />
+                    </div>
+                    <div class="criteria-content">
+                        <div>
+                            <input id="group-size" type="radio" onclick="document.getElementById('group-number-input').disabled=true; document.getElementById('group-size-input').disabled=false" name="criteria-value" />
+                            <label for="group-size">Group Size</label>
+                        </div>
+                        <input type="number" id="group-size-input" min="0" step="1" disabled />
+                    </div>
+                </div>
+                <div id="submissions">
+                    <button type="submit" id="submit">MAKE GROUP</button>
+                </div>
+            </form>
+            <div id="result-wrapper">
+                <div id="result">
+                    <h2>GROUPINGS</h2>
+                    <hr>
+                    <div id="display-partition">
+                        <div class="first-column">
+                            <p><div class="group-heading">GROUP 1</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><div class="group-heading">GROUP 1</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><div class="group-heading">GROUP 1</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><div class="group-heading">GROUP 1</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><div class="group-heading">GROUP 1</div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="second-column"></div>
+                    </div>
+                </div>
+                <div id="result-nav">
+                    <button type="submit" id="remake">REMAKE</button>
+                    <button type="submit" id="download">DOWNLOAD</button>
                 </div>
             </div>
-            <div id="submissions">
-                <button type="submit" id="submit">MAKE GROUP</button>
-            </div>
-        </form>
-        <div id="result-wrapper">
-            <div id="result">
-                <h2>GROUPINGS</h2>
-                <hr>
-                <div id="display-partition">
-                    <div class="first-column"></div>
-                    <div class="second-column"></div>
-                </div>
-            </div>
-            <div id="result-nav">
-                <button type="submit" id="remake">REMAKE</button>                
-                <button type="submit" id="download">DOWNLOAD</button>
-            </div>
-        </div>
+        </main>
+        <div id="spacing-bottom"></div>
     </body>
 </html>
