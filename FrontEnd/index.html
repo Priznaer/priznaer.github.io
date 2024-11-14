@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="basic.css">
+        <title>Group Maker</title>
+    </head>
+    <body>
+        <header>
+            <h1>GROUP MAKER</h1>
+            <hr>
+        </header>
+        <form>
+            <div class="container" id="filepath-container">
+                <h2>Choose Class List</h2>
+                <hr>
+                <div id="file-selection">
+                    <input id="file-input" type="file" required/>
+                    <input id="file-select-btn" type="button" value="Select File" onclick="document.getElementById('file-input').click()">
+                </div>
+            </div>
+            <div class="container" id="criteria">
+                <div class="criteria-content">
+                    <h2>Criteria</h2>
+                    <h2>Quantity</h2>
+                </div>
+                    <hr>
+                <div class="criteria-content">
+                    <div>
+                        <input id="group-number" type="radio" onclick="document.getElementById('group-size-input').disabled=true; document.getElementById('group-number-input').disabled=false" name="criteria-value" checked>
+                        <label for="group-number">Number of Groups</label>
+                    </div>
+                    <input type="number" id="group-number-input" min="0" step="1" />
+                </div>
+                <div class="criteria-content">
+                    <div>
+                        <input id="group-size" type="radio" onclick="document.getElementById('group-number-input').disabled=true; document.getElementById('group-size-input').disabled=false" name="criteria-value">
+                        <label for="group-size">Group Size</label>
+                    </div>
+                    <input type="number" id="group-size-input" min="0" step="1" disabled />
+                </div>
+            </div>
+            <div id="submissions">
+                <button type="submit" id="submit">MAKE GROUP</button>
+            </div>
+        </form>
+        <div id="result-wrapper">
+            <div id="result">
+                <h2>GROUPINGS</h2>
+                <hr>
+                <div id="display-partition">
+                    <div class="first-column"></div>
+                    <div class="second-column"></div>
+                </div>
+            </div>
+            <div id="result-nav">
+                <button type="submit" id="remake">REMAKE</button>                
+                <button type="submit" id="download">DOWNLOAD</button>
+            </div>
+        </div>
+    </body>
+</html>

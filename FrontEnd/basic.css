@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    font-family: sans;
+}
+
+html {
+/*    font-size: 60%;*/
+    font-size: 10px;
+    --primary-color: rgb(255, 231, 231);
+    --secondary-color: rgb(1, 11, 144);
+    --btn-border-radius: 0.4rem;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    min-width: 450px;
+    max-width: 50vw;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 0;
+}
+
+header hr {
+    height: 0.5rem;
+    background-color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.container {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+}
+
+#filepath-container h2 {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.container hr {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+#file-selection {
+    text-align: center;
+}
+
+#file-selection input::-webkit-file-upload-button,
+input::file-selector-button {
+    display: none;
+}
+
+#file-selection input {
+    margin: auto;
+    border: 1px solid var(--secondary-color);
+    border-radius: 3px;
+    width: 30%;
+    padding: 1px 6px 1px 6px;
+    vertical-align: center;
+}
+
+#file-selection input[type="button"] {
+    margin-left: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 3px;
+}
+
+.criteria-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 0 15px;
+}
+
+input[type="radio"] {
+    margin-left: 0;
+    vertical-align: bottom;
+}
+
+.criteria-content label {
+    font-size: 1.25rem;
+}
+
+.criteria-content input[type="number"] {
+    width: 5rem;
+    border-radius: 2rem;
+    border: 2px solid var(--secondary-color);
+}
+
+#submissions {
+    text-align: center;
+}
+
+#submit {
+    margin: auto;
+    color: var(--secondary-color);
+    display: inline-block;
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 0.4rem;
+}
+
+button#download, #remake {
+    margin: auto;
+    color: var(--secondary-color);
+    display: inline-block;
+    background-color: var(--primary-color);
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 0.4rem;
+}
+
+#result {
+    border: 0.2rem solid var(--secondary-color);
+    border-radius: 1rem;
+    width: 100%;
+}
+
+#result h2 {
+    text-align: center;
+}
+
+#result hr {
+    height: 0.2rem;
+    background-color: var(--secondary-color);
+    margin-bottom: 0;
+}
+
+#display-partition {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    min-height: 5rem;
+    margin: 0;
+}
+
+.first-column {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    border-right: 0.1rem solid var(--secondary-color);
+}
+
+.second-column {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border-left: 0.1rem solid var(--secondary-color);
+}
+
+#result-nav {
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+#result-nav button {
+    margin: auto 10px;
+}
+
+/* Mobile query */
+@media (max-width: 450px) {
+    body {
+        background-color: red;
+
+    }
+}

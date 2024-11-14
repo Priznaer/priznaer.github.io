@@ -3,8 +3,10 @@ Given a file containing a list of index number - name pairs,
 create groups of a given size or a given number.
 """
 
+import tkinter as tk
+from pathlib import Path
 from random import randint
-from pprint import pprint
+from tkinter import filedialog, simpledialog, ttk
 
 
 class GroupMaker:
@@ -45,6 +47,9 @@ class GroupMaker:
         return a (bool, dict) for the validity of the file content and the valid data.
         dict will be empty if the file is invalid.
         """
+        # Check file type and its existance
+        if (Path(filepath).suffix != ".txt") or (not Path(filepath).exists()):
+            return (False, dict())
         validity = True
         index_name_pairs = dict()
         # get file content
@@ -119,58 +124,34 @@ class GroupMaker:
 
 
 
-GroupMaker("valid_members_list.txt", no_groups=11)
-# GroupMaker("valid_members_list.txt", group_size=7)
+
+class GUIWrapper(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Group Maker")
+        self.minsize(500, 500)
+        self.resizable(True, True)
+        self.input_filepath = None
+        self.constraint      = None
+        self.controller()
+
+    def controller(self):
+        self._create_starter_view(self)
+        ...
+
+    def _create_starter_view(self, parent):
+        # file selection frame
+        file_select_frame = tk.Frame(parent)
+        ttk.Label(file_select_frame, text="Select an input file (.txt): ").pack(side="left")
+        ttk.Button(file_select_frame, text="select file...", command=self._get_input_filepath).pack(side="left")
+        file_select_frame.pack(fill="x", anchor="nw", padx=10, pady=10)
+        ...
+
+    def _get_input_filepath(self):
+        self.input_filepath = filedialog.askopenfilename()
+        print(self.input_filepath)
 
 
-
-"""
-* Inputs: 
-    ~ $filepath   - a file containing index number and name pairs
-    ~ $no_groups  - an integer representing the maximum number of groups
-    ~ $group_size - an integer representing maximum number of members in a group
-    [!] NB :: $no_groups and $group_size are mutually exclusive
-    [!] WIP :: what to do if both $no_groups and $group_size are given
-
-* File validation and parsing: 
-    ~ $index_name_pairs = dict()
-    ~ For each line:
-        ~ Check that the first n characters are numbers ($index_number check)
-        ~ Check that next 3 characters is the seperator characters (seperator check)
-        ~ Check that there is at least 1 character after the seperator sequence ($name check)
-        ~ Check that $index_number is not already in the index_name_pair dict (duplicate check)
-        ~ add $index_number : $name pair to $index_name_pairs dict
-    ~ return (True, $index_name_pairs) if all the above tests pass else (False, {})
-
-* Group creation
-    [Description] 
-        Create the groups using the $group_list and either the $no_groups or $group_size 
-        arguments
-    [#] $group_list & $no_groups
-        ~ $groupings = [list() for grp in range($no_groups)]
-        ~ $current_group_idx = 0
-        ~ while ($group_list is not exhausted):
-            ~ $random_idx = randint(0, len($group_list)-1)
-            ~ if $current_group_idx > $no_groups:
-                ~ $current_group_idx = 0
-            ~ $grouping[$current_group_idx].append($group_list[$random_idx])
-            ~ $current_group_idx += 1
-        return $groupings
-    [#] $group_list & $group_size
-        ~ $grouping = list()
-        ~ while ($group_list is not exhausted):
-            ~ $current_group = list()
-            ~ while (len($current_group) < $group_size) and ($group_list is not exhausted):
-                ~ $random_idx = randint(0, len($group_list))
-                ~ $current_group.append($group_list.pop($random_idx))
-            ~ $grouping.append($current_group)
-        return $groupings
-
-* Format result
-    [Description]
-        Select format for which to present the resulting groups 
-        (txt, json, html, pdf, spreadsheet)
-    [#] Txt
-        ~ ...
-    ...
-"""
+# GUIWrapper().mainloop()
+filepath = r"D:\UserProfilesStorage\Dee\Documents\Coding\Python\group_maker\valid_members_list.txt"
+GroupMaker(filepath, group_size=6)
