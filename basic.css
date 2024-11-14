@@ -9,6 +9,7 @@ html {
     font-size: 60%;
     --h2-size: 2.5rem;
     --label-size: 1.75rem;
+    --container-width: 90%;
     --btn-border-radius: 0.4rem;
     --secondary-color: rgb(1, 11, 144);
     --primary-color: rgb(255, 231, 231);
@@ -41,7 +42,7 @@ main {
 }
 
 .container {
-    width: 70%;
+    width: var(--container-width);
     margin: 20px auto;
     padding: 10px;
     border: 2px solid var(--secondary-color);
@@ -69,6 +70,7 @@ main {
 #file-selection input::-webkit-file-upload-button,
 input::file-selector-button {
     display: none;
+    margin: 0;
 }
 
 #file-selection input {
@@ -224,7 +226,7 @@ button#download, #remake {
     }
 
     #result-wrapper {
-        width: 70%;
+        width: var(--container-width);
         margin: 20px auto;
     }
 
@@ -243,7 +245,7 @@ button#download, #remake {
 
 @media (min-width: 800px) {
     #result-wrapper {
-        max-width: 70%;
+        max-width: var(--container-width);
         margin: auto;
     }
 }
