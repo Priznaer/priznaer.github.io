@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 20px;
+}
+
+body {
+	margin: 0;
+	padding: 1rem;
+	background: aquamarine;
+}
+
+header h1 {
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+header p {
+	margin: 0;
+	text-align: center;
+}
+
+blockquote {
+	padding: 0.5rem;
+	border: 2px solid grey;
+	border-radius: 0.5rem;
+}
+
+article {
+	margin: 2rem 0;
+}
+
+article img {
+	display: block;
+	min-width: 500px;
+	min-height: 500px;
+	max-width: 45vw;
+	max-height: 40vw;
+	margin: 1rem auto;
+}
+
+article .description {
+	display: inline;
+}
+
+ul, li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
