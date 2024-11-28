@@ -12,6 +12,33 @@ body {
 	background: aquamarine;
 }
 
+nav {
+	width: 90%;
+	margin: auto;
+	padding: 5px;
+	border-radius: 10px;
+	border: 2px solid grey;
+	background-color: rgb(228, 213, 213);
+}
+
+nav ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: aqua;
+}
+
+nav a:visited {
+	color: blue;
+}
+
 header h1 {
 	text-align: center;
 	margin-bottom: 2px;
@@ -50,3 +77,23 @@ ul, li {
 	margin: 0;
 	padding: 0;
 }
+
+
+/* About Page */
+#about-body {
+	padding: 10px;
+}
+
+#about-main {
+	width: 75%;
+	margin-top: 30%;
+	text-align: center;
+}
+
+
+/* Gallery Page */
+
+
+
+/* Projects Page */
+
